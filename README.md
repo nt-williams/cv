@@ -1,3 +1,3 @@
-# Academic CV
+# CV
 
-This repo contains my academic CV in latex, available as a [PDF](cv-gboeing.pdf). It generally conforms to Karen Kelsky's guidelines, with some tweaks for clearer information presentation and nicer typography.
+My CV available as a [PDF](cv-ntwilliams.pdf). Adapted from Geoff Boeing.

@@ -1,0 +1,269 @@
+% Adapted from https://github.com/gboeing/cv
+
+\documentclass[12pt,letterpaper]{report}
+
+\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) so accented characters are a single glyph
+\usepackage[utf8]{inputenc} % allow input of utf-8 encoded characters
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\usepackage[USenglish]{babel} % automatically regionalize hyphens, quote marks, etc
+\usepackage{microtype} % improves text appearance with kerning, etc
+\usepackage{datetime} % enable formatting of date output
+\usepackage{tabto} % make nice tabbing
+\usepackage{hyperref} % enable hyperlinks and pdf metadata
+\usepackage{geometry} % manually set page margins
+\usepackage{enumitem} % enumerate with [resume] option
+\usepackage{titlesec} % allow custom section fonts
+
+% what is your name?
+\newcommand{\myname}{Nicholas Williams}
+
+% define a default font face and set it as the body font
+\usepackage{crimson} % document's serif font
+\usepackage{helvet}  % document's sans serif font
+
+% define how far to tab for list items with left-aligned date - different font faces need different widths
+\newcommand{\listtabwidth}{1.75cm}
+
+% set name font to title the document
+\newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
+
+% set section heading fonts and before/after spacing
+\SetTracking{encoding=*}{20}
+\titleformat{\section}{\sffamily\small\bfseries\lsstyle\uppercase}{}{}{}{}
+\titlespacing{\section}{0pt}{24pt plus 4pt minus 2pt}{12pt plus 2pt minus 2pt}
+
+% set subsection heading fonts and before/after spacing
+\titleformat{\subsection}{\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\subsection}{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
+
+% set page margins
+\geometry{body={6.5in, 9.0in},
+    left=1.0in,
+    top=1.0in}
+
+% prevent paragraph indentation
+\setlength\parindent{0em}
+
+% define space between list items
+\newcommand{\listitemspace}{0.15em}
+
+% make unordered lists without bullets and use compact spacing
+\renewenvironment{itemize}
+{\begin{list}{}{\setlength{\leftmargin}{0em}
+            \setlength{\parskip}{0em}
+            \setlength{\itemsep}{\listitemspace}
+            \setlength{\parsep}{\listitemspace}}}
+    {\end{list}}
+
+% make tabbed lists so content is left-aligned next to years
+\TabPositions{\listtabwidth}
+\newlist{tablist}{description}{3}
+\setlist[tablist]{leftmargin=\listtabwidth,
+    labelindent=0em,
+    topsep=0em,
+    partopsep=0em,
+    itemsep=\listitemspace,
+    parsep=\listitemspace,
+    font=\normalfont}
+
+% print the month and year only when using \today
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+% define hyperlink appearance and metadata for pdf properties
+\hypersetup{
+    colorlinks  = true,
+    urlcolor    = black,
+    pdfauthor   = {\myname},
+    pdfkeywords = {biostatistics, causal inference, R programming},
+    pdftitle    = {\myname: Curriculum Vitae},
+    pdfsubject  = {Curriculum Vitae},
+    pdfpagemode = UseNone
+}
+
+\begin{document}
+    \raggedright
+
+    % display name as the document title
+    \namefont{\myname}
+
+    % contact info
+    \vspace{1em}
+    \begin{minipage}[t]{0.64\textwidth}
+        Division of Biostatistics \\
+        Department of Population Health Sciences \\
+        Weill Cornell Medical College
+        %\\Los Angeles, California, USA
+    \end{minipage}
+    \begin{minipage}[t]{0.34\textwidth}
+        Email: \href{mailto:niw4001@med.cornell.edu}{niw4001@med.cornell.edu} \\
+        Phone: +1 719 650 1307 \\
+        Web: \href{https://nicholastwilliams.com/}{nicholastwilliams.com}
+    \end{minipage}
+    \vspace{0.5em}
+
+    \section*{Education}
+
+    \begin{tablist}
+
+        \item[M.P.H.]  \tab Biostatistics, Columbia University, 2019
+
+        \item[B.A.]  \tab Psychology, University of Colorado at Boulder, 2017
+
+    \end{tablist}
+
+    \section*{Professional Experience}
+
+    \begin{tablist}
+
+        \item[2019--]   \tab Weill Cornell Medical College \\
+                             Research Biostatistician I, Division of Biostatistics \\
+                             Department of Population Health Sciences 
+        
+        \item[2018]  \tab Mailman School of Public Health \\
+                              Research Assistant, Department of Biostatistics \\
+                              Supervisor: Christine Mauro, Ph.D.
+
+    \end{tablist}
+
+    \section*{Research Interests}
+
+    \begin{itemize}
+
+        \item Nonparametric causal inference methodology with application to health policy
+
+        \item Open source statistical software implementation with a focus on usability
+
+    \end{itemize}
+
+    \section*{Publications}
+
+    \subsection*{Research in Statistics}
+
+    \begin{tablist}
+    
+        	\item[2020] \tab Díaz, I., \textbf{Williams, N.}, Hoffman, K. and Schenck, E. \enquote{Non-parametric causal effects based on longitudinal modified treatment policies.} \textit{arXiv} preprint: \href{https://arxiv.org/abs/2006.01366v2}{2006.01366v2} 
+    	
+    \end{tablist}
+
+    \subsection*{Applied Health Sciences}
+
+    \begin{tablist}
+    
+        	\item[2020] \tab Thiesmeyer, J.W., Ullmann, T.M., Greenberg, J., \textbf{Williams, N.T.}, Limberg, J., Stefanova, D., Beninato, T., Finnerty, B.M., Vignaud, T., Leclerc, J., Fahey III, T.J., Mirallie, E.M., Brunaud, L. and Zarnegar, R..\enquote{Hypertension resolution after adrenalectomy for primary hyperaldosteronism: Which is the best predictive model?} \textit{Surgery}. DOI: \href{https://doi.org/10.1016/j.surg.2020.04.017}{10.1016/j.surg.2020.04.017}  
+	
+	\item[2020] \tab Riley, C.A., Zheng, Z., \textbf{Williams, N.}, Smith, T.L., Orlandi, R.R. and Tabaee, A. \enquote{Concordance of self‐reported practice patterns of American Rhinologic Society members with the International Consensus Statement of Allergy and Rhinology: Rhinosinusitis} \textit{International Forum of Allergy and Rhinology}. DOI: \href{https://doi.org/10.1002/alr.22533}{10.1002/alr.22533} 
+
+	\item[2019] \tab Hussain, I., Winston, G.M., Goldberg, J., Curri, C., \textbf{Williams, N.}, Chazen, J.L., Greenfield, J.P. and Baaj, A.A. \enquote{Impact of imaging modality, age, and gender on craniocervical junction angles in adults without structural pathology.} \textit{Journal of Craniovertebral Junction and Spine}. PMID: \href{https://www.ncbi.nlm.nih.gov/pubmed/32089618}{32089618}
+
+    \end{tablist}
+    
+    \subsection*{Blog posts}
+    
+    \begin{tablist}
+    
+    	\item[2020] \tab \textbf{Williams, N.} \enquote{An introduction to estimating the causal Effects of feasible interventions.} \href{https://towardsdatascience.com/an-introduction-to-estimating-the-causal-effects-of-feasible-interventions-e07ed45136ff?source=friends_link&sk=811ae7c0e029cd850418678a6284a781}{\textit{Towards Data Science}.}
+    
+    \end{tablist}
+
+    \section*{Invited Talks}
+
+    \begin{tablist}
+
+        \item[2020] \tab \enquote{An Introduction to Answering Causal Questions with the lmtp R package.} Weill Cornell Biostatistics Computing Club. New York, NY. July 14.
+
+    \end{tablist}
+    
+    \section*{Software}
+    
+    \subsection*{Maintainer}
+    
+    \begin{tablist}
+    
+    	\item[\textit{lmtp}] \tab \texttt{R}: Non-Parametric Causal Effects of Feasible Interventions Based on Modified Treatment Policies
+	
+	\item[\textit{cabinets}] \tab \texttt{R}: Project Specific Workspace Organization Templates
+	
+	\item[\textit{catfun}] \tab \texttt{R}: Categorical Data Analysis
+    
+    \end{tablist}
+    
+    \subsection*{Contributer}
+    
+    \begin{tablist}
+    
+    	\item[\textit{broom}] \tab \texttt{R}: Convert Statistical Objects into Tidy Tibbles
+    
+    \end{tablist}
+
+    \section*{Conference Activity}
+
+    \subsection*{Conference Presentations}
+
+    Presenting author \textit{italicized}. \bigskip
+    % Asterisk* indicates paper published in \enquote{Peer-Reviewed Proceedings} above.
+
+    \begin{tablist}
+    
+	\item[2020] \tab \textbf{\textit{Williams, N.},} Savenkov, O. and Chrea, B. \enquote{Estimating the Causal Effect of Surgical Treatment for Posterior Malleolus Fracture with Different Treatment Rules on Patient Reported Outcomes.} Joint Statistical Meetings (Virtual), Philadelphia, PA.
+    
+    	\item[2019] \tab \textit{Mauro, C.}, \textbf{Williams, N.} and An, A. \enquote{Experiences with Incorporating R into a Second-Level Biostatistics Course for MPH Students.} Joint Statistical Meetings, Denver, CO.
+
+    \end{tablist}
+
+    \section*{Grants and Awards}
+
+    \subsection*{Awards and Honors}
+
+    \begin{tablist}
+
+        \item[2017] \tab Graduate with Distinction, University of Colorado at Boulder
+
+    \end{tablist}
+
+    \subsection*{Grants and Fellowships}
+
+    \begin{tablist}
+
+        \item[2015] \tab Virginia Summer Undergraduate Research Initiative. The relationship between cognitively oriented verbs and affect.
+
+    \end{tablist}
+
+    \section*{Teaching Experience}
+
+    \subsection*{Columbia University}
+    
+    \begin{itemize}
+    	
+    	\item Categorical Data Analysis (Lead Teaching Assistant)
+    	\item Research Methods, Quantitative Foundations (Teaching Assistant)
+    
+    \end{itemize}
+
+    \section*{Professional Affiliations}
+
+    \begin{tablist}
+
+        \item[2020--] \tab American Statistical Association
+
+    \end{tablist}
+
+    \section*{Technical Skills}
+
+    \begin{itemize}
+
+        \item \texttt{R}
+        
+        \item \texttt{SAS}
+        
+        \item \texttt{SQL}
+
+    \end{itemize}
+
+    % display today's date as Month Year after a vertical space below the end of the text
+    \begin{center}
+        %\vspace{6em}
+        \vfill
+        Updated \monthyeardate\today
+    \end{center}
+
+\end{document}
